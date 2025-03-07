@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div>
+    <h1>{{ .Title }}</h1>
+    {{ if .Content }}
+    <div class="mb-8">
+        {{ .Content }}
+    </div>
+    {{ end }}
+
+    <div class="terminal-list">
+        {{ range .Pages.ByDate.Reverse }}
+        <div class="mb-6 pb-4 border-b border-terminal-bgHighlight">
+            <div class="flex items-start">
+                <span class="terminal-prompt mt-1">$</span>
+                <div class="ml-2">
+                    <h2 class="text-xl mb-1">
+                        <a href="{{ .Permalink }}"
+                            class="border-b-0 hover:border-b hover:border-dashed hover:border-terminal-accent">{{ .Title
+                            }}</a>
+                    </h2>
+                    {{ if .Date }}
+                    <div class="text-terminal-comment text-sm mb-2">
+                        {{ .Date.Format "January 2, 2006" }}
+                    </div>
+                    {{ end }}
+                    {{ if .Summary }}
+                    <div class="text-terminal-body">
+                        {{ .Summary }}
+                        {{ if .Truncated }}
+                        <a href="{{ .Permalink }}" class="text-terminal-secondary hover:text-terminal-accent">Read
+                            more...</a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

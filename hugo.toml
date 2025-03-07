@@ -1,0 +1,58 @@
+baseURL = 'https://parambharat.github.io/'
+languageCode = 'en-us'
+title = 'parambharat'
+
+[markup]
+  defaultMarkdownHandler = 'goldmark'
+
+[params]
+    description = "A modern terminal-themed website"
+
+[build]
+    [build.buildStats]
+        enable = true
+    [[build.cachebusters]]
+        source = 'assets/notwatching/hugo_stats\.json'
+        target = 'css'
+    [[build.cachebusters]]
+        source = '(postcss|tailwind)\.config\.js'
+        target = 'css'
+[module]
+    [[module.mounts]]
+        source = 'assets'
+        target = 'assets'
+    [[module.mounts]]
+        disableWatch = true
+        source = 'hugo_stats.json'
+        target = 'assets/notwatching/hugo_stats.json'
+
+[menu]
+    [[menu.main]]
+        name = "About"
+        url = "/about/"
+        weight = 10
+    [[menu.main]]
+        name = "Posts"
+        url = "/posts/"
+        weight = 20
+    [[menu.main]]
+        name = "Projects"
+        url = "/projects/"
+        weight = 30
+
+# Social Tags
+
+[[params.social]]
+    name = "GitHub"
+    icon = "github"
+    url = "https://github.com/parambharat"
+
+[[params.social]]
+    name = "Twitter"
+    icon = "twitter"
+    url = "https://x.com/ParamBharat"
+
+[[params.social]]
+    name = "LinkedIn"
+    icon = "linkedin"
+    url = "https://www.linkedin.com/in/param-bharat/"

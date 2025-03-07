@@ -1,0 +1,22 @@
+{
+    "name": "terminal",
+    "version": "1.0.0",
+    "description": "A terminal-like theme for Hugo using Tailwind CSS",
+    "main": "index.js",
+    "scripts": {
+        "build": "NODE_ENV=production npx tailwindcss --config tailwind.config.js --input assets/css/main.css --output static/css/style.css --minify"
+    },
+    "keywords": [
+        "hugo",
+        "theme",
+        "terminal",
+        "tailwind"
+    ],
+    "author": "parambharat",
+    "license": "MIT",
+    "devDependencies": {
+        "autoprefixer": "^10.4.14",
+        "postcss": "^8.4.24",
+        "tailwindcss": "^3.3.2"
+    }
+}

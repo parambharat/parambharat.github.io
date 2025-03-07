@@ -1,0 +1,61 @@
+{{ $resume := .Site.Data.resume250303 }}
+<div class="p-2">
+    <div class="flex items-start mb-6">
+        <img src="/images/myAvatar.png" alt="My Avatar" class="m-4 mr-6 w-[200px] h-[200px] flex-shrink-0">
+        <div class="flex-1 pt-4">
+            <h1 class="text-2xl font-bold">{{ $resume.basics.name }}</h1>
+            <span class="text-slate-400">{{ $resume.basics.headline }}</span>
+        </div>
+    </div>
+
+    <!-- Resume content with custom two-column layout -->
+    <div class="clear-both mt-4">
+        <!-- Work Experience Section -->
+        <h2 class="text-xl font-bold mb-4 border-b border-slate-600 pb-2">{{ $resume.sections.experience.name }}</h2>
+
+        {{ range $resume.sections.experience.items }}
+        {{ if .visible }}
+        <div class="mb-6">
+            <div class="flex justify-between items-center">
+                <h3 class="text-lg font-semibold text-sky-400 mb-0 pr-4 flex-1">
+                    {{ .position }} at
+                    {{ if .url.href }}
+                    <a href="{{ .url.href }}" class="hover:underline">{{ .company }}</a>
+                    {{ else }}
+                    {{ .company }}
+                    {{ end }}
+                </h3>
+                <span class="text-slate-400 text-sm italic mr-4">{{ .date }}</span>
+            </div>
+            <div class="text-sm text-slate-400 mb-2">{{ .location }}</div>
+            <div class="pl-5">
+                {{ .summary | safeHTML }}
+            </div>
+        </div>
+        {{ end }}
+        {{ end }}
+
+        <!-- Education Section -->
+        <h2 class="text-xl font-bold mb-4 border-b border-slate-600 pb-2 mt-8">{{ $resume.sections.education.name }}
+        </h2>
+
+        {{ range $resume.sections.education.items }}
+        {{ if .visible }}
+        <div class="mb-6">
+            <div class="flex justify-between items-center">
+                <div class="pr-4 flex-1">
+                    <h3 class="text-lg font-semibold mb-0">{{ .studyType }} in {{ .area }}</h3>
+                    <div class="text-sm font-medium">{{ .institution }}</div>
+                </div>
+                <span class="text-slate-400 text-sm italic mr-4">{{ .date }}</span>
+            </div>
+            {{ if .summary }}
+            <div class="mt-2 pl-5">
+                {{ .summary | safeHTML }}
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+        {{ end }}
+    </div>
+</div>

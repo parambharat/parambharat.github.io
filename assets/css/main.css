@@ -1,0 +1,59 @@
+/* Import Special Elite font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+/* Ensure the font is applied */
+:root {
+  --font-terminal: 'Special Elite', Courier, monospace;
+}
+
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Only keeping essential custom styles */
+.terminal-prompt {
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: rgb(56 189 248); /* sky-400 */
+}
+
+.typing-cursor {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 1px;
+  color: rgb(56 189 248); /* sky-400 */
+  animation: blink 0.8s step-end infinite;
+}
+
+#theme-toggle {
+  position: fixed;
+  bottom: 3.5rem; /* Increased to clear the footer */
+  right: 1.5rem;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  z-index: 9999;
+  background-color: rgb(51 65 85); /* slate-700 */
+  color: rgb(241 245 249); /* slate-100 */
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.dark #theme-toggle {
+  background-color: rgb(30 41 59); /* slate-800 */
+}
+
+#theme-toggle:hover {
+  transform: rotate(45deg);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

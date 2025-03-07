@@ -1,0 +1,342 @@
+:root {
+    /* Light mode variables */
+    --background-color: #f8fafc;
+    /* slate-50 */
+    --text-color: #0f172a;
+    /* slate-900 */
+    --accent-color: #0284c7;
+    /* sky-600 */
+    --secondary-color: #0369a1;
+    /* sky-700 */
+    --font-family: 'Special Elite', Courier, monospace;
+    --cursor-blink-time: 0.8s;
+    --terminal-bg: #f1f5f9;
+    /* slate-100 */
+    --terminal-text: #1e293b;
+    /* slate-800 */
+    --terminal-accent: #0284c7;
+    /* sky-600 */
+    --terminal-muted: #64748b;
+    /* slate-500 */
+    --terminal-header: #e2e8f0;
+    /* slate-200 */
+    --terminal-border: #cbd5e1;
+    /* slate-300 */
+    --terminal-comment: #64748b;
+    /* slate-500 */
+    --terminal-font: 'Special Elite', monospace;
+}
+
+/* Dark mode variables */
+.dark,
+body.dark {
+    --background-color: #0f172a;
+    /* slate-900 */
+    --text-color: #f8fafc;
+    /* slate-50 */
+    --accent-color: #38bdf8;
+    /* sky-400 */
+    --secondary-color: #0ea5e9;
+    /* sky-500 */
+    --terminal-bg: #1e293b;
+    /* slate-800 */
+    --terminal-text: #e2e8f0;
+    /* slate-200 */
+    --terminal-accent: #38bdf8;
+    /* sky-400 */
+    --terminal-muted: #94a3b8;
+    /* slate-400 */
+    --terminal-header: #0f172a;
+    /* slate-900 */
+    --terminal-border: #475569;
+    /* slate-600 */
+    --terminal-comment: #94a3b8;
+    /* slate-400 */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--terminal-font) !important;
+    font-size: 16px;
+    line-height: 1.6;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.terminal-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.terminal-prompt {
+    color: var(--terminal-muted);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.terminal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.terminal-content {
+    padding: 1rem 0;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+    border-bottom: 1px dashed var(--accent-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 1.5rem 0 1rem;
+    color: var(--accent-color);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p,
+ul,
+ol {
+    margin-bottom: 1rem;
+}
+
+ul,
+ol {
+    padding-left: 2rem;
+}
+
+pre,
+code {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-family: var(--font-family);
+}
+
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+code {
+    padding: 0.2rem 0.4rem;
+}
+
+blockquote {
+    border-left: 3px solid var(--accent-color);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+.terminal-cursor::after {
+    content: "▋";
+    color: var(--accent-color);
+    animation: blink var(--cursor-blink-time) infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Navigation */
+.terminal-nav {
+    margin-bottom: 2rem;
+}
+
+.terminal-nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.terminal-nav li {
+    margin-right: 1.5rem;
+}
+
+.terminal-nav a {
+    color: var(--text-color);
+    border-bottom: none;
+}
+
+.terminal-nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Footer */
+.terminal-footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .terminal-container {
+        padding: 1rem;
+    }
+
+    html,
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Terminal theme utility classes */
+
+.bg-terminal-header {
+    background-color: var(--terminal-header);
+}
+
+.text-terminal-text {
+    color: var(--terminal-text);
+}
+
+.text-terminal-accent {
+    color: var(--terminal-accent);
+}
+
+.text-terminal-muted {
+    color: var(--terminal-muted);
+}
+
+.text-terminal-comment {
+    color: var(--terminal-comment);
+}
+
+.border-terminal-border {
+    border-color: var(--terminal-border);
+}
+
+/* Terminal dots (for the header) */
+.terminal-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+/* Terminal prompt styling */
+.terminal-prompt {
+    color: var(--terminal-muted);
+    margin-right: 0.5rem;
+}
+
+/* Ensure the page takes up the full viewport */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Make sure grid layout works properly */
+.grid {
+    display: grid !important;
+}
+
+/* Animation for the typing cursor */
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.typing-cursor {
+    display: inline-block;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+    margin-left: 1px;
+}
+
+/* Add this to your terminal.css */
+.font-mono {
+    font-family: 'Special Elite', monospace !important;
+}
+
+/* Theme toggle button styling */
+#theme-toggle {
+    position: fixed !important;
+    bottom: 24px !important;
+    right: 24px !important;
+    width: 40px !important;
+    height: 40px !important;
+    background-color: var(--terminal-accent) !important;
+    color: var(--background-color) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) !important;
+    z-index: 9999 !important;
+    transition: all 0.3s ease;
+}
+
+.dark #theme-toggle {
+    background-color: var(--terminal-accent) !important;
+    color: var(--background-color) !important;
+}
+
+#theme-toggle:hover {
+    transform: rotate(45deg);
+}

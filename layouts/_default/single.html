@@ -1,0 +1,30 @@
+{{ define "main" }}
+<article>
+    <div class="mb-6">
+        <h1 class="mb-2">{{ .Title }}</h1>
+        {{ if .Date }}
+        <div class="text-terminal-comment text-sm">
+            <span class="terminal-prompt">$</span> date
+            <span class="ml-2">{{ .Date.Format "January 2, 2006" }}</span>
+        </div>
+        {{ end }}
+    </div>
+
+    <div class="terminal-content-body">
+        {{ .Content }}
+    </div>
+
+    {{ with .Params.tags }}
+    <div class="mt-8 pt-4 border-t border-terminal-bgHighlight">
+        <div class="flex flex-wrap">
+            <span class="terminal-prompt mr-2">$</span> tags:
+            {{ range . }}
+            <a href='{{ "tags/" | relLangURL }}{{ . | urlize }}'
+                class="mr-2 mb-2 px-2 py-1 bg-terminal-bgLight rounded-md hover:bg-terminal-bgHighlight transition-colors duration-300 no-underline border-0">{{
+                . }}</a>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+</article>
+{{ end }}

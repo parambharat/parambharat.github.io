@@ -1,0 +1,343 @@
+{
+  "basics": {
+    "name": "Ramanathan Parameshwaran",
+    "headline": "Machine learning nerd driven by a curiosity to build, fail, learn and share",
+    "email": "param.bharat@gmail.com",
+    "phone": "+91 9717156090",
+    "location": "Bengaluru, Karnataka, In",
+    "url": {
+      "label": "",
+      "href": ""
+    },
+    "customFields": [],
+    "picture": {
+      "url": "https://lh3.googleusercontent.com/a/ACg8ocK1BpE2-kivTfwlO9ryHi74OPg5t0JRVpXWhQDVAqplyhjsAH64ug=s96-c",
+      "size": 64,
+      "aspectRatio": 1,
+      "borderRadius": 9999,
+      "effects": {
+        "hidden": false,
+        "border": false,
+        "grayscale": true
+      }
+    }
+  },
+  "sections": {
+    "summary": {
+      "name": "Summary",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "summary",
+      "content": ""
+    },
+    "awards": {
+      "name": "Awards",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "awards",
+      "items": []
+    },
+    "certifications": {
+      "name": "Certifications",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "certifications",
+      "items": []
+    },
+    "education": {
+      "name": "Education",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "education",
+      "items": [
+        {
+          "id": "lzkkdk98ajy00xbaqal9xf5d",
+          "visible": true,
+          "institution": "Harvard Extension School",
+          "studyType": "Graduate Certificate",
+          "area": "Data Science",
+          "score": "",
+          "date": "Jan 2020 - Aug 2021",
+          "summary": "<ul><li><p>Workflows for Text Classification: ML workflows using Luigi, Dask and Tensorflow to orchestrate at scale</p></li><li><p>Automatic Citation Treatment Analysis:A citation retrieval system using deep Transformer representations.</p></li><li><p>Speech Explorer and Summarizer: Real-time audio transcript analysis using kubernetes</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": "https://extension.harvard.edu/academics/programs/data-science-graduate-certificate/"
+          }
+        },
+        {
+          "id": "uz7zpwkj8m56ksuhdyh3fckl",
+          "visible": true,
+          "institution": "Sastra University",
+          "studyType": "Bachelor of Technology",
+          "area": "Mechanical Engineering",
+          "score": "",
+          "date": "Jun 2010 - jun 2014",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": "https://mech.sastra.edu/"
+          }
+        }
+      ]
+    },
+    "experience": {
+      "name": "Experience",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "experience",
+      "items": [
+        {
+          "id": "m0dci3n739svah1xha9zl9s5",
+          "visible": true,
+          "company": "Weights & Biases",
+          "position": "Senior Machine Learning Engineer",
+          "location": "Remote",
+          "date": "May 2022 - Present",
+          "summary": "<ul><li><p>Taught a course on building advanced RAG and GenAI applications with over 5000+ participants</p></li><li><p>Built <code>wandbot</code> and <code>wandAgent</code> - LLM-RAG applications serving a community of over 3000+ users.</p></li><li><p>Developed integrations with Transformers, Lightning, SkLearn, YOLO, Openai.</p></li><li><p>Conducted webinars and workshops on MLOps and LLM Agents at Universities and Tech Events</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": "https://wandb.ai/site"
+          }
+        },
+        {
+          "id": "kjut0cugi9q9z7dnt1n8jkf5",
+          "visible": true,
+          "company": "Huddl",
+          "position": "Senior AI Engineer",
+          "location": "Remote",
+          "date": "Mar 2020 - May 2022",
+          "summary": "<ul><li><p style=\"text-align: justify\">Optimized ML services by applying quantization and knowledge distillation, achieving a tenfold cost reduction. </p></li><li><p style=\"text-align: justify\">Developed \"Agenda Suggestions\" utilizing BM25, Entity Extraction, and Deep Neural Re-ranking. </p></li><li><p style=\"text-align: justify\">Enhanced \"Huddl Motes\" by implementing Kafka consumers for Topic Segmentation and Entity Extraction. </p></li><li><p style=\"text-align: justify\">Streamlined workflows with containerization and CI/CD halving engineering cycle time.</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": "https://huddl.ai"
+          }
+        },
+        {
+          "id": "pp5xztn2w1qk6phkb2jf9kpw",
+          "visible": true,
+          "company": "IceCreamLabs",
+          "position": "Founding Machine Learning Engineer",
+          "location": "Bangaluru",
+          "date": "Jun 2017 - Jan 2020",
+          "summary": "<ul><li><p>Created model API backend to annotate time-varying text data profiles using Snorkel and MongoDB</p></li><li><p>Developed multi-modal graph recommendation engine with Neo4J, enhancing product cart suggestions</p></li><li><p>Prototyped an award-winning shelf monitoring solution for retailers using deep object tracking.</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": "https://www.icecreamlabs.com"
+          }
+        },
+        {
+          "id": "zqlrw3saksxe08c4qwvkbwgf",
+          "visible": true,
+          "company": "Edu2Code",
+          "position": "Teaching Assistant",
+          "location": "Bengaluru",
+          "date": "Jan 2017 - Jun 2017",
+          "summary": "<ul><li><p>Trained 18 developers in Statistics, Machine Learning, and Deep Learning through a 3-part course</p></li><li><p>Collaborated on Computer Vision and NLP projects leading to job placements of students</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": "http://www.edu2code.com/"
+          }
+        },
+        {
+          "id": "ge3e7h8q3pm15pxv4zlrmqsz",
+          "visible": true,
+          "company": "Udacity",
+          "position": "Data Science Mentor",
+          "location": "Remote",
+          "date": "Sep 2016 - Jul 2017",
+          "summary": "<ul><li><p>Founded a data science student community of over 1,000 members, serving as a mentorship platform.</p></li><li><p>Guided 60 students in Computer Vision and NLP for Self-Driving Car and ML nanodegree projects.</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": "https://www.udacity.com/"
+          }
+        },
+        {
+          "id": "hf0keuf1jowonz6i8bodnt3c",
+          "visible": true,
+          "company": "IBM",
+          "position": "Data Analyst, Team Lead",
+          "location": "Bengaluru",
+          "date": "Jun 2014 - Jun 2016",
+          "summary": "<ul><li><p>Represented the forensic data analysis team for a key financial fraud management project.</p></li><li><p>Delivered 3 projects in Anti-Money Laundering, Data Warehousing and Oracle Data Engineering</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": "https://www.ibm.com/consulting"
+          }
+        }
+      ]
+    },
+    "volunteer": {
+      "name": "Volunteering",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "volunteer",
+      "items": []
+    },
+    "interests": {
+      "name": "Interests",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "interests",
+      "items": []
+    },
+    "languages": {
+      "name": "Languages",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "languages",
+      "items": []
+    },
+    "profiles": {
+      "name": "Profiles",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "profiles",
+      "items": [
+        {
+          "id": "lw511i9e4j6spyowbr3f992h",
+          "visible": true,
+          "network": "Github",
+          "username": "parambharat",
+          "icon": "github",
+          "url": {
+            "label": "",
+            "href": "https://github.com/parambharat"
+          }
+        },
+        {
+          "id": "rs95k6onadrsolfsky2skfei",
+          "visible": true,
+          "network": "LinkedIn",
+          "username": "param-bharat",
+          "icon": "linkedin",
+          "url": {
+            "label": "",
+            "href": "https://www.linkedin.com/in/param-bharat/"
+          }
+        },
+        {
+          "id": "bk3wsn4v1dn1fxqgx0txm119",
+          "visible": true,
+          "network": "X.com",
+          "username": "ParamBharat",
+          "icon": "X",
+          "url": {
+            "label": "",
+            "href": "https://x.com/ParamBharat"
+          }
+        }
+      ]
+    },
+    "projects": {
+      "name": "Projects",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "projects",
+      "items": [
+        {
+          "id": "yj2wqc5bixxlfeirgjpt6s3e",
+          "visible": true,
+          "name": "Wandbot",
+          "description": "Documentation Assistant",
+          "date": "",
+          "summary": "",
+          "keywords": [],
+          "url": {
+            "label": "",
+            "href": "http://github.com/wandb/wandbot"
+          }
+        }
+      ]
+    },
+    "publications": {
+      "name": "Publications",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "publications",
+      "items": []
+    },
+    "references": {
+      "name": "References",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "references",
+      "items": []
+    },
+    "skills": {
+      "name": "Skills",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "skills",
+      "items": []
+    },
+    "custom": {}
+  },
+  "metadata": {
+    "template": "onyx",
+    "layout": [
+      [
+        [
+          "profiles",
+          "education",
+          "experience",
+          "projects",
+          "summary",
+          "volunteer"
+        ],
+        [
+          "skills",
+          "interests",
+          "certifications",
+          "awards",
+          "publications",
+          "references",
+          "languages"
+        ]
+      ]
+    ],
+    "css": {
+      "value": "* {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}",
+      "visible": false
+    },
+    "page": {
+      "margin": 16,
+      "format": "a4",
+      "options": {
+        "breakLine": true,
+        "pageNumbers": true
+      }
+    },
+    "theme": {
+      "background": "#ffffff",
+      "text": "#000000",
+      "primary": "#57534e"
+    },
+    "typography": {
+      "font": {
+        "family": "Special Elite",
+        "subset": "latin",
+        "variants": [
+          "regular"
+        ],
+        "size": 12
+      },
+      "lineHeight": 1,
+      "hideIcons": false,
+      "underlineLinks": true
+    },
+    "notes": ""
+  }
+}

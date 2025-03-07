@@ -1,0 +1,9 @@
+<header
+    class="bg-slate-700 dark:bg-slate-800 border-b border-slate-600 dark:border-slate-700 p-2 text-xs transition-colors duration-300 h-10">
+    <div class="flex items-center h-full">
+        <div class="terminal-welcome text-center text-slate-400">
+            <p><span class="terminal-prompt">$</span> <span class="text-sky-400">echo</span> {{ .Site.Title }} - {{ if
+                .IsHome }}Home{{ else }}{{ .Title }}{{ end }}</p>
+        </div>
+    </div>
+</header>

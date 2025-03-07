@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" class="h-full w-full m-0 p-0">
+{{ partial "head.html" . }}
+
+<body
+    class="bg-slate-800 dark:bg-slate-900 text-slate-200 dark:text-slate-100 min-h-screen h-screen max-h-screen w-full m-0 p-0 grid grid-rows-[auto_1fr_auto] transition-colors duration-300 font-terminal">
+
+    <!-- Fixed Header - first row -->
+    {{ partial "header.html" . }}
+
+    <!-- Main Content - middle row that takes all available space -->
+    <main class="overflow-auto">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <!-- Fixed Footer - last row -->
+    {{ partial "footer.html" . }}
+
+    <script src='{{ "js/terminal.js" | relURL }}'></script>
+    {{ block "scripts" . }}{{ end }}
+</body>
+
+</html>

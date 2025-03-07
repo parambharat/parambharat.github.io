@@ -1,0 +1,97 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, height=device-height, maximum-scale=1.0, user-scalable=0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description"
+        content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    <!-- Prevent flash of incorrect theme -->
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            document.body.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            document.body.classList.remove('dark');
+        }
+
+        // Explicitly define toggleTheme in the global scope
+        window.toggleTheme = function () {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                document.body.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+
+            // Force a repaint to ensure styles are applied
+            void document.documentElement.offsetHeight;
+
+            // Apply dark mode to all elements with transition-colors class
+            const transitionElements = document.querySelectorAll('.transition-colors');
+            transitionElements.forEach(element => {
+                // Force a repaint on each element
+                void element.offsetHeight;
+            });
+        }
+    </script>
+
+    <!-- Load Special Elite font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap">
+    <link rel="stylesheet" href='{{ "css/style.css" | relURL }}'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha384-..." crossorigin="anonymous">
+
+    <!-- Add a direct font-family style in case Tailwind's font-terminal isn't working -->
+    <style>
+        /* Global resets to ensure consistent rendering */
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        /* Set base font */
+        body {
+            font-family: 'Special Elite', Courier, monospace !important;
+        }
+
+        /* Force footer to stay at bottom */
+        footer {
+            position: sticky;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+            /* Add shadow to make it more visible */
+        }
+
+        /* Debug outline to see element boundaries */
+        .debug header {
+            outline: 1px solid red;
+        }
+
+        .debug main {
+            outline: 1px solid blue;
+        }
+
+        .debug footer {
+            outline: 1px solid green;
+        }
+    </style>
+    {{ with .Site.Params.favicon }}
+    <link rel="icon" href="{{ . | relURL }}">{{ end }}
+    {{ hugo.Generator }}
+    {{ block "head" . }}{{ end }}
+</head>
