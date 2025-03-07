@@ -7,42 +7,6 @@
         content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
     <link rel="canonical" href="{{ .Permalink }}">
 
-    <!-- Prevent flash of incorrect theme -->
-    <script>
-        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-        if (localStorage.getItem('theme') === 'dark' ||
-            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-            document.body.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-            document.body.classList.remove('dark');
-        }
-
-        // Explicitly define toggleTheme in the global scope
-        window.toggleTheme = function () {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                document.body.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            } else {
-                document.documentElement.classList.add('dark');
-                document.body.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            }
-
-            // Force a repaint to ensure styles are applied
-            void document.documentElement.offsetHeight;
-
-            // Apply dark mode to all elements with transition-colors class
-            const transitionElements = document.querySelectorAll('.transition-colors');
-            transitionElements.forEach(element => {
-                // Force a repaint on each element
-                void element.offsetHeight;
-            });
-        }
-    </script>
-
     <!-- Load Special Elite font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap">
     <link rel="stylesheet" href='{{ "css/style.css" | relURL }}'>

@@ -27,33 +27,6 @@
     --terminal-font: 'Special Elite', monospace;
 }
 
-/* Dark mode variables */
-.dark,
-body.dark {
-    --background-color: #0f172a;
-    /* slate-900 */
-    --text-color: #f8fafc;
-    /* slate-50 */
-    --accent-color: #38bdf8;
-    /* sky-400 */
-    --secondary-color: #0ea5e9;
-    /* sky-500 */
-    --terminal-bg: #1e293b;
-    /* slate-800 */
-    --terminal-text: #e2e8f0;
-    /* slate-200 */
-    --terminal-accent: #38bdf8;
-    /* sky-400 */
-    --terminal-muted: #94a3b8;
-    /* slate-400 */
-    --terminal-header: #0f172a;
-    /* slate-900 */
-    --terminal-border: #475569;
-    /* slate-600 */
-    --terminal-comment: #94a3b8;
-    /* slate-400 */
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -311,32 +284,4 @@ body {
 /* Add this to your terminal.css */
 .font-mono {
     font-family: 'Special Elite', monospace !important;
-}
-
-/* Theme toggle button styling */
-#theme-toggle {
-    position: fixed !important;
-    bottom: 24px !important;
-    right: 24px !important;
-    width: 40px !important;
-    height: 40px !important;
-    background-color: var(--terminal-accent) !important;
-    color: var(--background-color) !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    cursor: pointer !important;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) !important;
-    z-index: 9999 !important;
-    transition: all 0.3s ease;
-}
-
-.dark #theme-toggle {
-    background-color: var(--terminal-accent) !important;
-    color: var(--background-color) !important;
-}
-
-#theme-toggle:hover {
-    transform: rotate(45deg);
 }
