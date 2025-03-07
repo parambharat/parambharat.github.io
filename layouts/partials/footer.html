@@ -1,30 +1,37 @@
 <footer class="bg-slate-700 border-b border-slate-600 p-2 text-xs transition-colors duration-300 h-10">
-    <div class="relative flex items-center h-full w-full px-4">
-        <!-- Left-aligned echo text -->
-        <div class="terminal-welcome text-left text-slate-400 absolute left-4">
+    <div class="flex items-center justify-between h-full w-full">
+        <!-- Left column (20%) - echo text -->
+        <div class="w-1/8 terminal-welcome text-slate-400">
             <p><span class="terminal-prompt">$</span> <span class="text-sky-400">echo "© {{ now.Format "2006" }} {{
-                    .Site.Title }}"</span>
+                    .Site.Title }}"</span></p>
         </div>
 
-        <!-- Centered socials -->
-        {{ if .Site.Params.social }}
-        <div class="flex items-center justify-center gap-8 py-0.5 w-full">
-            {{ range $index, $social := .Site.Params.social }}
-            {{ if $index }} <span class="text-content-dim text-slate-500 mx-4">•</span> {{ end }}
-            <a href="{{ $social.url }}" target="_blank" rel="noopener noreferrer"
-                class="text-content-normal hover:text-blue border-none p-0.5 rounded transition-colors duration-200 text-sm">
-                {{ if eq $social.name "GitHub" }}
-                <span class="text-cyan"><i class="fab fa-github"></i></span>
-                {{ else if eq $social.name "Twitter" }}
-                <span class="text-cyan"><i class="fab fa-twitter"></i></span>
-                {{ else if eq $social.name "LinkedIn" }}
-                <span class="text-cyan"><i class="fab fa-linkedin"></i></span>
+        <!-- Middle column (60%) - centered socials with fixed width items -->
+        <div class="w-3/4 flex items-center justify-center">
+            <div class="flex items-center">
+                {{ range $index, $social := .Site.Params.social }}
+                {{ if $index }}
+                <div class="mx-12">&nbsp;&nbsp;|&nbsp;&nbsp;</div>
                 {{ end }}
-                <span class="ml-1">{{ $social.url | replaceRE
-                    "^https?://(www\\.)?(github\\.com|x\\.com|twitter\\.com|linkedin\\.com)/(.+?)/?$" "$3" }}</span>
-            </a>
-            {{ end }}
+                <div class="social-link">
+                    <a href="{{ $social.url }}" target="_blank" rel="noopener noreferrer"
+                        class="text-content-normal hover:text-blue border-none p-0.5 rounded transition-colors duration-200 text-sm">
+                        {{ if eq $social.name "GitHub" }}
+                        <span class="text-cyan"><i class="fab fa-github"></i></span>
+                        {{ else if eq $social.name "Twitter" }}
+                        <span class="text-cyan"><i class="fab fa-twitter"></i></span>
+                        {{ else if eq $social.name "LinkedIn" }}
+                        <span class="text-cyan"><i class="fab fa-linkedin"></i></span>
+                        {{ end }}
+                        <span class="ml-1">{{ $social.url | replaceRE
+                            "^https?://(www\\.)?(github\\.com|x\\.com|twitter\\.com|linkedin\\.com)/(.+?)/?$" "$3"
+                            }}</span>
+                    </a>
+                </div>
+                {{ end }}
+            </div>
         </div>
-        {{ end }}
+        <!-- Right column (20%) - empty space -->
+        <div class="w-1/8"></div>
     </div>
 </footer>
