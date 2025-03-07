@@ -98,7 +98,7 @@
           "position": "Senior Machine Learning Engineer",
           "location": "Remote",
           "date": "May 2022 - Present",
-          "summary": "<ul><li><p>Taught a course on building advanced RAG and GenAI applications with over 5000+ participants</p></li><li><p>Built <code>wandbot</code> and <code>wandAgent</code> - LLM-RAG applications serving a community of over 3000+ users.</p></li><li><p>Developed integrations with Transformers, Lightning, SkLearn, YOLO, Openai.</p></li><li><p>Conducted webinars and workshops on MLOps and LLM Agents at Universities and Tech Events</p></li></ul>",
+          "summary": "<ul><li><p>Taught a course on <a href=\"https://wandb.ai/site/courses/rag/\">building advanced RAG and GenAI applications</a> with over 5000+ participants</p></li><li><p>Built <a href=\"https://github.com/wandb/wandbot\"><code>wandbot</code></a> and <a href=\"https://github.com/wandb/wandagent\"><code>wandAgent</code></a> - LLM-RAG applications serving a community of over 3000+ users.</p></li><li><p>Developed integrations with <a href=\"https://huggingface.co/docs/transformers/v4.49.0/en/main_classes/callback#transformers.integrations.WandbCallback\">Transformers</a>, <a href=\"https://lightning.ai/docs/pytorch/stable/api/lightning.pytorch.loggers.wandb.html\">Lightning</a>, <a href=\"https://github.com/parambharat/wandb-sklearn-integration\">SkLearn</a>, <a href=\"https://docs.ultralytics.com/integrations/weights-biases/\">YOLO</a>, <a href=\"https://weave-docs.wandb.ai/guides/integrations/openai/\">Openai</a>.</p></li><li><p>Conducted webinars and workshops on MLOps and LLM Agents at Universities and Tech Events</p></li></ul>",
           "url": {
             "label": "",
             "href": "https://wandb.ai/site"
