@@ -14,15 +14,24 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
 
 jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.143.1
+      HUGO_ENVIRONMENT: production
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,7 +42,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: ${{ env.HUGO_VERSION }}
           extended: true  # If you're using SCSS/SASS or other features requiring extended version
 
       - name: Setup Node
@@ -41,18 +50,18 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+
       - name: Install dependencies
-        run: npm install
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || npm install"
 
       - name: Build
-        run: hugo --minify
-
-      # Debug step to see what's in the public directory
-      - name: List public directory
-        run: ls -la public/
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+        run: |
+          hugo \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
